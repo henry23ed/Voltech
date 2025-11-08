@@ -1,0 +1,38 @@
+.custom-navbar {
+  transition: all 0.4s ease;
+}
+
+/* Transparent state (on hero) */
+.navbar-transparent {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+/* White background (on about or when toggled open) */
+.navbar-white {
+  background: white !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* White hamburger icon (for dark background) */
+.navbar-transparent .navbar-toggler-icon {
+  filter: invert(1) brightness(200%);
+}
+
+/* Black hamburger icon (for white background) */
+.navbar-white .navbar-toggler-icon {
+  filter: invert(0) brightness(0%);
+}
+
+/* Remove outlines and borders */
+.no-outline {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+.no-outline:focus,
+.no-outline:active,
+.no-outline:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+}

@@ -1,0 +1,19 @@
+.about-section {
+  background-color: #f8f9fa;
+  min-height: 100vh;
+}
+
+.bank-name {
+  color: #004aad;
+  font-weight: 600;
+}
+
+.about-card {
+  border: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}

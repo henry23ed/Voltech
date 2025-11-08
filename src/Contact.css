@@ -1,0 +1,23 @@
+.contact-section {
+  background-color: #f8f9fa;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.contact-form {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+.map-container iframe {
+  border-radius: 10px;
+}
+
+.contact-section h2 {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+}
