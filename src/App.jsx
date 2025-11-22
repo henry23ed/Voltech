@@ -1,22 +1,22 @@
-import Hero from './Hero';
-import About from './About';
-import Service from './Services';
-import Contact from './Contact';
-import AppNavbar from './Navbar';
-import {Button} from 'react-bootstrap';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import AboutPage from './pages/AboutPage';
+import ServicesPage from './pages/ServicesPage';
+import ContactPage from './pages/ContactPage';
+import LearnmorePage from './pages/LearnmorePage';
 
 function App() {
-
   return (
-    <>
-    <AppNavbar />
-    <Hero />
-    <About />
-    <Service />
-    <Contact />
-    </>
-    
-  )
+    <Router basename="/Voltech">
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/services" element={<ServicesPage />} />
+        <Route path="/contact" element={<ContactPage />} />
+        <Route path="/learnmore" element={<LearnmorePage />} />
+      </Routes>
+    </Router>
+  );
 }
 
-export default App
+export default App;

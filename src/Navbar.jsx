@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Navbar, Container, Nav } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import "./Navbar.css";
 
 function AppNavbar() {
@@ -36,7 +37,8 @@ function AppNavbar() {
     >
       <Container>
         <Navbar.Brand
-          href="#home"
+          as={Link}
+          to="/"
           className={`fw-bold fs-4 ${
             navBackground ? "text-dark" : "text-light"
           }`}
@@ -53,25 +55,36 @@ function AppNavbar() {
         <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
           <Nav>
             <Nav.Link
-              href="#about"
+              as={Link}
+              to="/about"
               className={`px-3 ${navBackground ? "text-dark" : "text-light"}`}
               onClick={() => setExpanded(false)}
             >
               About
             </Nav.Link>
             <Nav.Link
-              href="#contact"
-              className={`px-3 ${navBackground ? "text-dark" : "text-light"}`}
-              onClick={() => setExpanded(false)}
-            >
-              Contact Us
-            </Nav.Link>
-            <Nav.Link
-              href="#services"
+              as={Link}
+              to="/services"
               className={`px-3 ${navBackground ? "text-dark" : "text-light"}`}
               onClick={() => setExpanded(false)}
             >
               Services
+            </Nav.Link>
+            <Nav.Link
+              as={Link}
+              to="/learnmore"
+              className={`px-3 ${navBackground ? "text-dark" : "text-light"}`}
+              onClick={() => setExpanded(false)}
+            >
+              Learn More
+            </Nav.Link>
+            <Nav.Link
+              as={Link}
+              to="/contact"
+              className={`px-3 ${navBackground ? "text-dark" : "text-light"}`}
+              onClick={() => setExpanded(false)}
+            >
+              Contact Us
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>

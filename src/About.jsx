@@ -1,5 +1,6 @@
 import React from "react";
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./About.css";
 
@@ -64,7 +65,7 @@ const About = () => {
 
         <Row className="text-center mt-5">
           <Col>
-            <Button variant="primary" size="lg" href="/contact">
+            <Button as={Link} to="/contact" variant="primary" size="lg">
               Get in Touch
             </Button>
           </Col>

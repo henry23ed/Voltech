@@ -1,27 +1,105 @@
 .custom-navbar {
   transition: all 0.4s ease;
+
+
+
+
+
+  backdrop-filter: blur(10px);
 }
 
 /* Transparent state (on hero) */
 .navbar-transparent {
-  background: transparent !important;
-  box-shadow: none !important;
+  background: rgba(0, 0, 0, 0.1) !important;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* White background (on about or when toggled open) */
+.navbar-transparent .navbar-brand {
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  font-size: 1.5rem;
+}
+
+.navbar-transparent .nav-link {
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.navbar-transparent .nav-link:hover {
+  color: #ffc107 !important;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* White background (when scrolled) */
 .navbar-white {
   background: white !important;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border-bottom: 3px solid #007bff;
 }
 
-/* White hamburger icon (for dark background) */
+.navbar-white .navbar-brand {
+  color: #007bff !important;
+  font-weight: 700;
+  font-size: 1.5rem;
+  letter-spacing: 0.5px;
+}
+
+.navbar-white .nav-link {
+  color: #333 !important;
+  font-weight: 600;
+  position: relative;
+  padding: 8px 12px !important;
+  margin: 0 5px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.navbar-white .nav-link:hover {
+  color: white !important;
+  background: #007bff;
+}
+
+/* Underline animation */
+.navbar-white .nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 3px;
+  background: #007bff;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.navbar-white .nav-link:hover::after {
+  width: 80%;
+}
+
+/* Hamburger styling */
+.navbar-transparent .navbar-toggler {
+  border: none;
+  box-shadow: none;
+}
+
 .navbar-transparent .navbar-toggler-icon {
-  filter: invert(1) brightness(200%);
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23ffffff' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.3));
 }
 
-/* Black hamburger icon (for white background) */
+.navbar-white .navbar-toggler {
+  border: 2px solid #007bff;
+  padding: 6px 8px;
+  border-radius: 4px;
+}
+
 .navbar-white .navbar-toggler-icon {
-  filter: invert(0) brightness(0%);
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23007bff' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
 /* Remove outlines and borders */
@@ -30,9 +108,71 @@
   outline: none !important;
   box-shadow: none !important;
 }
+
 .no-outline:focus,
 .no-outline:active,
 .no-outline:focus-visible {
   outline: none !important;
   box-shadow: none !important;
+}
+
+/* Navbar collapse styling */
+.navbar-collapse {
+  padding-top: 15px;
+}
+
+.navbar-white .navbar-collapse {
+  padding-top: 0;
+}
+
+/* Mobile responsive */
+@media (max-width: 991px) {
+  .navbar-white .navbar-collapse,
+  .navbar-transparent .navbar-collapse {
+    background: rgba(255, 255, 255, 0.98);
+    border-radius: 8px;
+    padding: 15px;
+    margin-top: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .navbar-white .nav-link,
+  .navbar-transparent .nav-link {
+    color: #333 !important;
+    padding: 10px 15px !important;
+    text-shadow: none !important;
+    font-weight: 600;
+  }
+
+  .navbar-white .nav-link:hover,
+  .navbar-transparent .nav-link:hover {
+    color: white !important;
+    background: #007bff;
+    border-radius: 4px;
+  }
+
+  .navbar-white .nav-link::after,
+  .navbar-transparent .nav-link::after {
+    display: none;
+  }
+
+  .navbar-transparent .navbar-collapse {
+    background: rgba(0, 0, 0, 0.9);
+  }
+
+  .navbar-transparent .nav-link {
+    text-shadow: none !important;
+    color: white !important;
+  }
+}
+
+/* Active link styling */
+.nav-link.active {
+  color: #007bff !important;
+  font-weight: 700;
+}
+
+.navbar-white .nav-link.active {
+  background: #e7f3ff;
+  border-radius: 4px;
 }

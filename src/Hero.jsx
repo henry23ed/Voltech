@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import "./Hero.css";
 
 const Hero = () => {
@@ -42,10 +43,10 @@ const Hero = () => {
               global access, and complete financial control at your fingertips.
             </p>
             <div className="d-flex flex-column flex-sm-row gap-3 justify-content-center justify-content-md-start">
-              <Button variant="primary" size="lg" href="/about">
+              <Button as={Link} to="/learnmore" variant="primary" size="lg">
                 Learn More
               </Button>
-              <Button variant="outline-light" size="lg" href="/contact">
+              <Button as={Link} to="/contact" variant="outline-light" size="lg">
                 Open an Account
               </Button>
             </div>
