@@ -5,9 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Page Not Found</title>
   <script>
-    // Redirect all 404s to the index.html with the original path preserved
-    const path = window.location.pathname.replace(/\/$/, '') || '/';
-    window.location.replace('/Voltech/index.html?redirect=' + encodeURIComponent(path));
+    // Store the path before redirecting to index.html
+    const path = window.location.pathname;
+    const search = window.location.search;
+    const hash = window.location.hash;
+    
+    // Store in sessionStorage for index.html to use
+    sessionStorage.redirect = path + search + hash;
+    
+    // Redirect to index.html
+    window.location.replace('/Voltech/');
   </script>
 </head>
 <body>
