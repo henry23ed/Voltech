@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Redirecting…</title>
+    <script>
+      (function(){
+        // Base for your GitHub Pages site
+        const base = '/Voltech';
+        // Original path (e.g. /Voltech/about)
+        let path = window.location.pathname || '/';
+        // Remove base prefix if present
+        if (path.indexOf(base) === 0) path = path.slice(base.length) || '/';
+        // Ensure leading slash
+        if (!path.startsWith('/')) path = '/' + path;
+        // Build hash URL and preserve search + hash
+        const redirect = base + '/#' + path + window.location.search + window.location.hash;
+        // Replace location (no history entry)
+        window.location.replace(redirect);
+      })();
+    </script>
+  </head>
+  <body>
+    <p>Redirecting to the app…</p>
+  </body>
+</html>
