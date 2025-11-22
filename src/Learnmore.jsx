@@ -1,5 +1,6 @@
 import React from "react";
 import { Container, Row, Col, Card, ListGroup, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import "./Learnmore.css";
 
 const Learnmore = () => {
@@ -226,7 +227,7 @@ const Learnmore = () => {
               Experience the future of banking today. Open your account in minutes.
             </p>
             <div className="d-flex flex-column flex-sm-row gap-3 justify-content-center">
-              <Button variant="primary" size="lg" href="/contact">
+              <Button as={Link} to="/contact" variant="primary" size="lg">
                 Open Account Now
               </Button>
               <Button variant="outline-primary" size="lg" onClick={scrollToTop}>
